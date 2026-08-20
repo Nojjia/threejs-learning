@@ -1,6 +1,6 @@
 import { defineConfig } from 'vite'
 
 export default defineConfig({
-	base: "./threejs-learning/",
+	base: "/threejs-learning/",
 
 })
