@@ -8,11 +8,8 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Starting build
-        run: echo "Job was automatically trigerred by a ${{github.event_name}} event"
       - name: Checkout repo
         uses: actions/checkout@v6
-      - run: echo "${{github.repository}} repository has been clones to the runner"
       - name: Setup Node.js
         uses: actions/setup-node@v7
         with:
@@ -23,7 +20,7 @@ jobs:
       - name: Build project
         run: npm run build
       - name: Upload build files/artifacts
-        uses: actions/upload-artifact@v7
+        uses: actions/upload-pages-artifact@v5
         with:
           name: dist-for-page
           path: ./dist
